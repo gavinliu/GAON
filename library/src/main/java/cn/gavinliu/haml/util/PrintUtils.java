@@ -32,6 +32,7 @@ public class PrintUtils {
                 System.out.println("=> table " + element.table.row + " * " + element.table.col);
                 for (List<HElement> e : element.table.items) {
                     printHElement(e);
+                    System.out.println("---");
                 }
                 System.out.println("<= table " + element.table.row + " * " + element.table.col);
             }

@@ -10,9 +10,15 @@ public class HamlTest {
 
     @Test
     public void test() {
-        String str = "<h1>My First Heading</h1><p><li>My first paragraph.</li></p>";
+        String html = "<h1>My First Heading</h1><p><li>My first paragraph.</li></p>";
+        List<HElement> elementList = Haml.parse(html);
+        PrintUtils.printHElement(elementList);
+    }
 
-        List<HElement> elementList = Haml.parse(str);
+    @Test
+    public void testTable(){
+        String html = "<table ><tr><th>姓名</th><th>电话</th></tr><tr><td>Bill Gates</td><td>555 77 854</td><td>555 77 855</td></tr></table>";
+        List<HElement> elementList = Haml.parse(html);
         PrintUtils.printHElement(elementList);
     }
 

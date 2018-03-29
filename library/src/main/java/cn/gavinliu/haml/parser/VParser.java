@@ -3,8 +3,6 @@ package cn.gavinliu.haml.parser;
 import cn.gavinliu.haml.bean.ITags;
 import cn.gavinliu.haml.util.StringUtils;
 import cn.gavinliu.haml.ve.*;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
@@ -47,7 +45,7 @@ public class VParser {
                         continue;
                     }
 
-                    // Recursion
+                    // Other Recursion
                     List<VTag> tempTags = new ArrayList<>();
                     tempTags.addAll(parentTags);
                     VTag supperTag = new VTag(((Element) node).tag());
@@ -111,7 +109,7 @@ public class VParser {
             items.add(data);
 
             if (col < ths.size() + tds.size()) {
-                col = data.size();
+                col = ths.size() + tds.size();
             }
         }
 
@@ -126,18 +124,5 @@ public class VParser {
             e.add(new VBrElement());
             data.addAll(e);
         }
-    }
-
-    public static void main(String[] args) {
-        String html = "<table border=\"1\"><tr><th>姓名</th><th colspan=\"2\">电话</th></tr><tr><td>Bill Gates</td><td>555 77 854</td><td>555 77 855</td></tr></table>";
-
-        Document document = Jsoup.parse(html);
-        Element body = document.body();
-
-        List<VTag> tags = new ArrayList<>();
-        tags.add(new VTag(body.tag()));
-        List<IVirtualElement> elements = VParser.parse(body.childNodes(), tags);
-
-        System.out.println(elements.size());
     }
 }
