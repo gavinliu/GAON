@@ -11,10 +11,10 @@ public class PrintUtils {
     public static void printHElement(List<HElement> elementList) {
         for (HElement element : elementList) {
             if (element.type == HElement.TYPE_TEXT) {
-                System.out.println(element.text.lineType + " " + element.text.text);
+                System.out.println(element.text.lineType + "\t" + element.text.text);
                 if (element.text.markups != null) {
                     for (Markup markup : element.text.markups) {
-                        System.out.println(" > " + markup.tag + " " + markup.start + " - " + markup.end + " " + element.text.text.substring(markup.start, markup.end) + " " + markup.source);
+                        System.out.println(" > " + markup.tag + "\t" + markup.start + " - " + markup.end + " " + element.text.text.substring(markup.start, markup.end) + " " + markup.source);
                     }
                 }
             }
