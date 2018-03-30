@@ -26,7 +26,7 @@ Haml.parse(html);
 
 ## Support
 
-### HAML Modle
+### HAML Element
 
 * Text
 * Image
