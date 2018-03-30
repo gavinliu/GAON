@@ -9,6 +9,16 @@ HAML is the JSON style markup language for describing article body.
 * HAML content can be auto generate by HTML
 * Different sides(Android/iOS/Web) can parse HAML to render it as a native page
 
+## Art 
+
+原文：
+
+![](screenshot/s2.png)
+
+
+HAML：
+![](screenshot/s1.png)
+
 ## Thanks
 
 * [QingMang's RAML](https://github.com/qingmang-team/docs/blob/master/raml/intro.md)
