@@ -2,6 +2,7 @@ package cn.gavinliu.haml;
 
 import cn.gavinliu.haml.bean.HElement;
 import cn.gavinliu.haml.util.PrintUtils;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.List;
@@ -10,9 +11,11 @@ public class HamlTest {
 
     @Test
     public void test() {
-        String html = "<h1>My First Heading</h1><p><li>My first paragraph.</li></p>";
+        String html = "<h1>My First Heading</h1><li><a href=\"/about\">My first paragraph.</a></li>";
         List<HElement> elementList = Haml.parse(html);
         PrintUtils.printHElement(elementList);
+
+        System.out.println(JSON.toJSONString(elementList));
     }
 
     @Test
